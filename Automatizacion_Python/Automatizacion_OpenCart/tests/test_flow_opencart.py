@@ -6,7 +6,7 @@ from pages.register_page import RegisterPage
 from pages.login_page import LoginPage
 from pages.product_page import ProductPage
 from pages.cart_page import CartPage
-from utils.evidencias import take_screenshot  # 👈 importar helper
+from utils.evidencias import take_screenshot  
 
 @pytest.fixture
 def setup():
