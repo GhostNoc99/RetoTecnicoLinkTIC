@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "e122cd96-c628-4529-b06d-99f22af9f068",
+		"name": "Primera_prueba_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31528299",
+		"_collection_link": "https://app444-4124.postman.co/workspace/MiApp~14f0d7a5-46c8-4ff7-91a6-cef793643f4e/collection/31528299-e122cd96-c628-4529-b06d-99f22af9f068?action=share&source=collection_link&creator=31528299"
+	},
+	"item": [
+		{
+			"name": "Validacion_backend",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let title1 = \"dolorum ut in voluptas mollitia et saepe quo animi\"\r",
+							"let body1 = \"aut dicta possimus sint mollitia voluptas commodi quo doloremque\\niste corrupti reiciendis voluptatem eius rerum\\nsit cumque quod eligendi laborum minima\\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam\"\r",
+							"\r",
+							"let title2 = \"autem hic labore sunt dolores incidunt\"\r",
+							"let body2 = \"enim et ex nulla\\nomnis voluptas quia qui\\nvoluptatem consequatur numquam aliquam sunt\\ntotam recusandae id dignissimos aut sed asperiores deserunt\"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"1.Status code es 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let jsonData = pm.response.json();\r",
+							"\r",
+							"let titles = jsonData.map(item => item.title);\r",
+							"let body = jsonData.map(item => item.body);\r",
+							"\r",
+							"pm.test(\"2.El valor esperado existe en alguno de los títulos: \" + title1, function () {\r",
+							"    let existe = titles.includes(title1);\r",
+							"    pm.expect(existe).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"3.El valor esperado existe en alguno de los body: \" + body1, function () {\r",
+							"    let existe = body.includes(body1);\r",
+							"    pm.expect(existe).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"4.El valor esperado existe en alguno de los títulos: \" + title2, function () {\r",
+							"    let existe = titles.includes(title2);\r",
+							"    pm.expect(existe).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"5.El valor esperado existe en alguno de los body: \" + body2, function () {\r",
+							"    let existe = body.includes(body2);\r",
+							"    pm.expect(existe).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				},
+				"description": "**Descripción:** Validar que en la respuesta del backend, los siguientes títulos y body estén presentes en la respuesta del backend, el QA debe desarrollar los test en la sección de test de postman, para validar que dichas categorías se encuentren en la solicitud:\n\n  \n• \"title\": \"dolorum ut in voluptas mollitia et saepe quo animi\"\n\n• \"body\": \"aut dicta possimus sint mollitia voluptas commodi quo doloremque\\\\niste corrupti reiciendis voluptatem eius rerum\\\\nsit cumque quod eligendi laborum minima\\\\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam\"\n\n• \"title\": \"autem hic labore sunt dolores incidunt\"\n\n• \"body\": \"enim et ex nulla\\\\nomnis voluptas quia qui\\\\nvoluptatem consequatur numquam aliquam sunt\\\\ntotam recusandae id dignissimos aut sed asperiores deserunt\""
+			},
+			"response": []
+		}
+	]
+}
