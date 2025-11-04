@@ -3,7 +3,7 @@ import os
 import pytest
 from pytest_html import extras
 
-# Agregar el directorio raíz al PYTHONPATH
+
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 @pytest.hookimpl(hookwrapper=True)
